@@ -23,6 +23,7 @@ public class felulet extends javax.swing.JFrame {
      */
     public felulet() {
         initComponents();
+        
     }
 
     /**
@@ -151,15 +152,22 @@ public class felulet extends javax.swing.JFrame {
     }//GEN-LAST:event_pohar4ValasztActionPerformed
 
     private void mentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mentActionPerformed
-        if(hely.isSelected()){
-            hol=rnd.nextInt(3)+1;
-        }
+        
     }//GEN-LAST:event_mentActionPerformed
 
     private void ujJatekActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ujJatekActionPerformed
         Random rnd= new Random();
-        System.out.println(hol);
-        //pohar1="";
+        if(hely.isSelected()){
+        hol=rnd.nextInt(3)+1;
+        System.out.println(hol);}
+        switch(hol){
+            case 1:pohar1.isSelected();break;
+            case 2:pohar2.isSelected();break;
+            case 3:pohar3.isSelected();break;
+        }
+        if(pohar1.isSelected()){
+            
+        }
     }//GEN-LAST:event_ujJatekActionPerformed
 
     private void helyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helyActionPerformed
@@ -175,6 +183,8 @@ public class felulet extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
+        
+        
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -192,7 +202,7 @@ public class felulet extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(felulet.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -217,5 +227,5 @@ public class felulet extends javax.swing.JFrame {
     private javax.swing.JMenuItem ujJatek;
     // End of variables declaration//GEN-END:variables
    private Random rnd;
-   private int hol=rnd.nextInt(3)+1;
+   private int hol;
 }
